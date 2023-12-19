@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "299174718914",
+    "project_id": "circuithub-63b72",
+    "storage_bucket": "circuithub-63b72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299174718914:android:16adffe042882c61eefa5b",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZeHXupg7YjhT11FpY8fUddnhZg5cWZ-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
