@@ -81,7 +81,8 @@ class login() : AppCompatActivity(), Parcelable {
                     val user: FirebaseUser? = auth.currentUser
 
                     val dash = Intent(this,dashboard::class.java)
-                    startActivity(dash);
+                    val home = Intent(this,home::class.java)
+                    startActivity(home);
 
                     Toast.makeText(this,"Login Successful",Toast.LENGTH_SHORT).show()
                 }

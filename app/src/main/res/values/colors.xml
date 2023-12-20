@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="btn_color1">#10747E</color>
     <color name="btn_color2">#03A9F4</color>
+    <color name="input_stroke">#5C5C5C</color>
+    <color name="input_bg">#C1C1C1</color>
+
 </resources>
