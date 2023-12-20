@@ -1,8 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary color. -->
+        <item name="colorPrimaryDark">#0050A7B6</item>
+        <item name="colorPrimary">@color/btn_color2</item>
+        <item name="colorPrimaryVariant">#00CDC6</item>
+        <item name="colorOnPrimary">#18C8A5</item>
+
+        <!-- Secondary color. -->
+<!--        <item name="colorSecondary">@color/btn_color2</item>-->
+<!--        <item name="colorSecondaryVariant">#00CDC6</item>-->
+<!--        <item name="colorOnSecondary">#18C8A5</item>-->
     </style>
 
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
