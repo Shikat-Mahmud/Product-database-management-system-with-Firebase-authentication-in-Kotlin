@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -25,6 +26,8 @@ class add_item : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_item)
+
+        FirebaseApp.initializeApp(this)
 
         sNo = findViewById(R.id.sNo)
         item = findViewById(R.id.item)
@@ -62,12 +65,15 @@ class add_item : AppCompatActivity() {
         val unit1 = unit.text.toString()
 
 
-        if(sNo1.isEmpty()){
+        if (sNo1.isEmpty()){
             sNo.error = "Please enter the item number"
+            return
         }
-        if(item1.isEmpty()){
+        if (item1.isEmpty()){
             item.error = "Please enter the item name"
+            return
         }
+
 
         val id = dbRef.push().key!!
 
@@ -76,9 +82,9 @@ class add_item : AppCompatActivity() {
         dbRef.child(id).setValue(item)
             .addOnCompleteListener{
                 Toast.makeText(this,"Item inserted successfully",Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener{err->
-                Toast.makeText(this,"Error ${err.message}",Toast.LENGTH_SHORT).show()
+            }.addOnFailureListener { err ->
+                err.printStackTrace()
+                Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_SHORT).show()
             }
-
     }
 }
