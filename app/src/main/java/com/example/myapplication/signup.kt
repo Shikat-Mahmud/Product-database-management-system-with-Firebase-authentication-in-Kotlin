@@ -79,8 +79,8 @@ class signup : AppCompatActivity() {
                     // Store additional user data in the Realtime Database
                     //storeUserData(user?.uid, fName1, lName1)
 
-                    val dash = Intent(this,dashboard::class.java)
-                    startActivity(dash);
+                    val home = Intent(this,home::class.java)
+                    startActivity(home);
 
                     Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
 

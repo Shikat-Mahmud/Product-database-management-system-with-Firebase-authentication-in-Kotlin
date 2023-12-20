@@ -80,7 +80,6 @@ class login() : AppCompatActivity(), Parcelable {
                 {
                     val user: FirebaseUser? = auth.currentUser
 
-                    val dash = Intent(this,dashboard::class.java)
                     val home = Intent(this,home::class.java)
                     startActivity(home);
 
