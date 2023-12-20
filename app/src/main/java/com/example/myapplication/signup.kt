@@ -22,22 +22,22 @@ class signup : AppCompatActivity() {
         setContentView(R.layout.activity_signup)
 
 
-        val loginTextBtn = findViewById<TextView>(R.id.loginTextBtn);
-        val email = findViewById<EditText>(R.id.email);
-        val password = findViewById<EditText>(R.id.password);
-        val conPassword = findViewById<EditText>(R.id.conPassword);
-        val signUpBtn = findViewById<Button>(R.id.signUpBtn);
+        val loginTextBtn = findViewById<TextView>(R.id.loginTextBtn)
+        val email = findViewById<EditText>(R.id.email)
+        val password = findViewById<EditText>(R.id.password)
+        val conPassword = findViewById<EditText>(R.id.conPassword)
+        val signUpBtn = findViewById<Button>(R.id.signUpBtn)
 
         signUpBtn.setOnClickListener{
-            val email1 = email.text.toString();
-            val password1 = password.text.toString();
-            val conPassword1 = conPassword.text.toString();
+            val email1 = email.text.toString()
+            val password1 = password.text.toString()
+            val conPassword1 = conPassword.text.toString()
 
             if(email1.isNotEmpty() && password1.isNotEmpty() && conPassword1.isNotEmpty())
             {
                 if(password1 == conPassword1)
                 {
-                    regis(email1,password1,conPassword1);
+                    regis(email1,password1)
                 }
                 else
                 {
@@ -51,7 +51,7 @@ class signup : AppCompatActivity() {
 
 
         loginTextBtn.setOnClickListener{
-            val login = Intent(this,login::class.java);
+            val login = Intent(this,login::class.java)
 
             startActivity(login)
         }
@@ -60,7 +60,7 @@ class signup : AppCompatActivity() {
 
     }
 
-    private fun regis(email1: String, password1: String, conPassword1: String) {
+    private fun regis(email1: String, password1: String) {
 
         // Initialize Firebase Authentication
         val auth = FirebaseAuth.getInstance()
@@ -80,7 +80,7 @@ class signup : AppCompatActivity() {
                     //storeUserData(user?.uid, fName1, lName1)
 
                     val home = Intent(this,home::class.java)
-                    startActivity(home);
+                    startActivity(home)
 
                     Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
 

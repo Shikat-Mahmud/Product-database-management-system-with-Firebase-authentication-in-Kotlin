@@ -24,27 +24,27 @@ class login() : AppCompatActivity(), Parcelable {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val signupTextBtn = findViewById<TextView>(R.id.signupTextBtn);
-        val email = findViewById<TextView>(R.id.email);
-        val password = findViewById<TextView>(R.id.password);
-        val loginBtn = findViewById<TextView>(R.id.loginBtn);
+        val signupTextBtn = findViewById<TextView>(R.id.signupTextBtn)
+        val email = findViewById<TextView>(R.id.email)
+        val password = findViewById<TextView>(R.id.password)
+        val loginBtn = findViewById<TextView>(R.id.loginBtn)
 
         loginBtn.setOnClickListener {
             val email1 = email.text.toString()
             val password1 = password.text.toString()
 
-            if(email1.isNullOrEmpty() || password1.isNullOrEmpty())
+            if(email1.isEmpty() || password1.isEmpty())
             {
                 Toast.makeText(this,"Fields can not be empty",Toast.LENGTH_SHORT).show()
             }
             else
             {
-                logi(email1,password1);
+                logi(email1,password1)
             }
         }
 
         signupTextBtn.setOnClickListener {
-            val signup = Intent(this,signup::class.java);
+            val signup = Intent(this,signup::class.java)
 
             startActivity(signup)
         }
@@ -72,16 +72,16 @@ class login() : AppCompatActivity(), Parcelable {
 
     private fun logi(email1: String, password1: String) {
 
-        val auth = FirebaseAuth.getInstance();
+        val auth = FirebaseAuth.getInstance()
 
         auth.signInWithEmailAndPassword(email1,password1)
             .addOnCompleteListener(this){ task: Task<AuthResult> ->
                 if(task.isSuccessful)
                 {
-                    val user: FirebaseUser? = auth.currentUser
+//                    val user: FirebaseUser? = auth.currentUser
 
                     val home = Intent(this,home::class.java)
-                    startActivity(home);
+                    startActivity(home)
 
                     Toast.makeText(this,"Login Successful",Toast.LENGTH_SHORT).show()
                 }
