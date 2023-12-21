@@ -1,10 +1,10 @@
-package com.example.myapplication
+import com.opencsv.bean.CsvBindByName
 
 data class ItemModel(
-    var sNo: String? = null,
-    var item: String? = null,
-    var currentLocation: String? = null,
-    var newLocation: String? = null,
-    var status: String? = null,
-    var unit: String? = null
+    @CsvBindByName(column = "SNo") var sNo: String? = null,
+    @CsvBindByName(column = "Item") var item: String? = null,
+    @CsvBindByName(column = "Current Location") var currentLocation: String? = null,
+    @CsvBindByName(column = "New Location") var newLocation: String? = null,
+    @CsvBindByName(column = "Status") var status: String? = null,
+    @CsvBindByName(column = "Unit") var unit: String? = null
 )

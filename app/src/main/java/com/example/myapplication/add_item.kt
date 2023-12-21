@@ -1,12 +1,13 @@
 package com.example.myapplication
 
+import ItemModel
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.FirebaseDatabase
-
 
 class add_item : AppCompatActivity() {
 
@@ -19,13 +20,24 @@ class add_item : AppCompatActivity() {
 
         // Assuming you have EditText fields for input
         // Replace these with your actual EditText fields
-
         val sNo = findViewById<EditText>(R.id.sNo)
         val item = findViewById<EditText>(R.id.item)
         val currentLocation = findViewById<EditText>(R.id.currentLocation)
         val newLocation = findViewById<EditText>(R.id.newLocation)
         val status = findViewById<EditText>(R.id.status)
         val unit = findViewById<EditText>(R.id.unit)
+
+        // Assume you have a button in your layout with ID "addCsv"
+        val addCsv = findViewById<FloatingActionButton>(R.id.addCsv)
+        addCsv.setOnClickListener {
+            // Instantiate CSVDataUploader with the current context and database reference
+            val csvUploader = CSVDataUploader(this, databaseReference)
+
+            // Upload and insert data from the CSV file
+            csvUploader.uploadCSVData("AllSpareParts.csv")
+
+            Toast.makeText(this, "Your CSV data inserted to the database successfully", Toast.LENGTH_SHORT).show()
+        }
 
         // Button to trigger data insertion
         val addBtn = findViewById<Button>(R.id.addBtn)
@@ -54,13 +66,14 @@ class add_item : AppCompatActivity() {
                         status1,
                         unit1
                     )
-                    insertData(item)
+                    insertInputData(item)
                 }
             }
         }
     }
 
-    private fun insertData(data: ItemModel) {
+
+    private fun insertInputData(data: ItemModel) {
         val newDataReference = dbReference.push()
         newDataReference.setValue(data)
             .addOnSuccessListener {
