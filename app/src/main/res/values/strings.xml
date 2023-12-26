@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CircuitHub</string>
+    <string name="db_name">All Spare Parts</string>
 </resources>
