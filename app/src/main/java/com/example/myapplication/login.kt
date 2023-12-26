@@ -16,8 +16,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseUser
 
 class login() : AppCompatActivity(), Parcelable {
-    constructor(parcel: Parcel) : this() {
-    }
+    constructor(parcel: Parcel) : this()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -22,12 +22,12 @@ class CSVDataUploader(private val context: Context, private val databaseReferenc
             while (reader.readNext().also { record = it } != null) {
                 if (record != null && record!!.size >= 6) {
                     val item = ItemModel(
-                        record!![0] ?: "",
-                        record!![1] ?: "",
-                        record!![2] ?: "",
-                        record!![3] ?: "",
-                        record!![4] ?: "",
-                        record!![5] ?: ""
+                        record!![0],
+                        record!![1],
+                        record!![2],
+                        record!![3],
+                        record!![4],
+                        record!![5]
                     )
 
                     insertData(item)

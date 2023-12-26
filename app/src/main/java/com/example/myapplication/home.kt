@@ -32,5 +32,8 @@ class home : AppCompatActivity() {
             val addItem = Intent(this, add_item::class.java)
             startActivity(addItem)
         }
+
     }
+
+
 }
