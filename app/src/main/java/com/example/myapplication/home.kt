@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import AddItem
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -17,10 +18,11 @@ class home : AppCompatActivity() {
             openDashboardFragment()
         }
 
-        val addBtn2 = findViewById<FloatingActionButton>(R.id.addBtn2)
+        val addBtn2 = findViewById<FloatingActionButton>(R.id.searchBtn)
 
         addBtn2.setOnClickListener {
-            openAddItemFragment()
+            val intent = Intent(this, search::class.java)
+            startActivity(intent)
         }
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNav)
