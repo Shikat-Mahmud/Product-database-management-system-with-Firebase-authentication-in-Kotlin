@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/btn_color2</item>
         <item name="colorPrimaryVariant">#00CDC6</item>
         <item name="colorOnPrimary">#18C8A5</item>
+        <item name="colorAccent">#E91E63</item>
 
         <!-- Secondary color. -->
 <!--        <item name="colorSecondary">@color/btn_color2</item>-->
