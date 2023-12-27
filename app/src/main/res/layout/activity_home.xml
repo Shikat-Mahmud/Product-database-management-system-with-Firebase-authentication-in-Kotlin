@@ -10,32 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-
-        <TextView
-            android:id="@+id/heading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/db_name"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:layout_marginHorizontal="15dp"
-            android:padding="8dp"
-            android:background="@drawable/button_bg"
-            android:textColor="@color/white"
-            android:textSize="26sp"
-            android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:id="@+id/itemRecyclerView"
-            tools:listitem="@layout/item_cardview"
-            android:layout_marginHorizontal="10dp" />
-    </FrameLayout>
-
+        android:id="@+id/fragment_container"/>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
