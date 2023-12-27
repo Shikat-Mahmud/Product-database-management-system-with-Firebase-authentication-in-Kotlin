@@ -3,21 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Dashboard">
 
     <TextView
         android:id="@+id/heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="@string/db_name"
         android:textAlignment="center"
         android:gravity="center"
         android:layout_marginHorizontal="15dp"
-        android:padding="8dp"
-        android:background="@drawable/button_bg"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textColor="@color/btn_color1"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <ProgressBar
@@ -31,7 +30,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="60dp"
         android:id="@+id/itemRecyclerView"
         tools:listitem="@layout/item_cardview"
         android:layout_marginHorizontal="10dp" />

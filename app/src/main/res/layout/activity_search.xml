@@ -12,6 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/btn_color1"
         app:title="Search"
+        app:navigationIconTint="@color/iconColor"
         app:titleTextColor="@color/white"/>
 
 </RelativeLayout>
