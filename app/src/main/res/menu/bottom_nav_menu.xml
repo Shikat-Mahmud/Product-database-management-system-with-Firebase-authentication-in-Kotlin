@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/home"
-        android:icon="@drawable/sharp_apps_24"
+        android:icon="@drawable/home"
         android:title="Home"
         />
 
@@ -14,7 +14,7 @@
 
     <item
         android:id="@+id/addItem"
-        android:icon="@drawable/sharp_attribution_24"
+        android:icon="@drawable/add_item"
         android:title="Add Item"
         />
 
