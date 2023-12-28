@@ -8,6 +8,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
@@ -25,7 +26,10 @@ class home : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener
         val drawerNavView = findViewById<NavigationView>(R.id.drawerNavigationView)
         drawerNavView.setNavigationItemSelectedListener(this)
 
-        val toggle = ActionBarDrawerToggle(this,drawerLayout,R.string.open_nav,R.string.close_nav)
+        val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        val toggle = ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open_nav,R.string.close_nav)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
