@@ -31,7 +31,6 @@
             app:itemIconTint="@color/iconColor"
             app:menu="@menu/bottom_nav_menu"
             app:itemTextColor="@color/white"
-            app:itemRippleColor="@color/white"
             android:background="@drawable/transparent_bg" />
 
     </com.google.android.material.bottomappbar.BottomAppBar>

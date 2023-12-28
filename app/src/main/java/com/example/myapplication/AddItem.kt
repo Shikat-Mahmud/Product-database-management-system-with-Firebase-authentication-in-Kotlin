@@ -1,4 +1,6 @@
+package com.example.myapplication
 
+import ItemModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,13 +9,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.myapplication.CSVDataUploader
-import com.example.myapplication.R
 import com.google.firebase.database.FirebaseDatabase
 
-
 class AddItem : Fragment() {
-
     private val databaseReference = FirebaseDatabase.getInstance().reference
     private val dbReference =
         databaseReference.child("All Spare Parts") // Replace with your desired path
