@@ -43,7 +43,7 @@
                 android:hint="Search item"
                 android:padding="12dp"
                 android:singleLine="true"
-                android:textColor="@android:color/black" />
+                android:textColor="@color/darkGray" />
 
             <!-- Add a search button (Button) -->
             <Button
@@ -76,6 +76,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginVertical="16dp"
