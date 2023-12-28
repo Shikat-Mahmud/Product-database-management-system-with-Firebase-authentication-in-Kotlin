@@ -108,7 +108,7 @@
             android:layout_marginTop="20dp"
             android:textColor="@color/white"
             android:layout_gravity="center"
-            android:text="Are you a new user? Sign Up now"
+            android:text="Are you a new user? SIGN UP"
             android:textSize="16dp"/>
 
     </LinearLayout>
