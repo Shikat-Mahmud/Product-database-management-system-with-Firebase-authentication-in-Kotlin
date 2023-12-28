@@ -4,4 +4,17 @@
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Close Navigation Drawer</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="app_info1">Welcome to the Product Database Manager – your ultimate solution for seamless product management! Designed for sellers and businesses, this app empowers you to efficiently handle your product database, add new items effortlessly, and access detailed information about each product.</string>
+    <string name="app_info2">1) Add New Products: Quickly add new products to your database, providing essential details such as product name, location, status, and unit.</string>
+    <string name="app_info3">2) Search and Find: Utilize the search functionality to find specific products. Search by name, location, or any other relevant criteria.</string>
+    <string name="app_info4">3) Detailed Insights: View detailed information about each product, including its current location, status, and unit, giving you a complete overview.</string>
+    <string name="app_info5">4) Effortless Navigation: Navigate through your product database effortlessly, ensuring a smooth and efficient management process.</string>
+
+    <string name="app_info6">1) Intuitive Product Management: Easily manage your product database with an intuitive interface. Add, edit, or delete product entries with just a few taps, ensuring your database is always up-to-date.</string>
+    <string name="app_info7">2) Quick Search Functionality: Find any product in seconds! The app offers a powerful search feature, allowing you to locate products based on various criteria like product name, location, status, and unit.</string>
+    <string name="app_info8">3) Detailed Product Information: Access comprehensive details about each product, including its current location, status (e.g., in stock or out of stock), and unit information. Stay informed to make better business decisions.</string>
+    <string name="app_info9">4) Efficient Database Navigation: Navigate through your product database effortlessly. The app provides a smooth and organized structure, making it easy to find the information you need without any hassle.</string>
+    <string name="app_info10">5) User-Friendly Interface: Enjoy a user-friendly experience with a well-designed interface. Whether you are a seasoned professional or a beginner, managing your product database has never been this simple.</string>
+
 </resources>
