@@ -10,6 +10,7 @@
     <color name="primary_color">#50A7B6</color>
     <color name="iconColor">#FFFFFF</color>
     <color name="accentColor">#00B7BD</color>
+    <color name="itemBgColor">#E3E3E3</color>
 
 
 </resources>

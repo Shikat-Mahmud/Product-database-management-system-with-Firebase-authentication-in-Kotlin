@@ -2,18 +2,73 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp">
 
-    <!-- Customize the layout based on your needs, for example: -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_bg"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"
+        android:orientation="vertical"
+        app:cornerRadius="10dp">
+
+
     <TextView
         android:id="@+id/textSNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Serial No"
-        android:textColor="@android:color/black"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:layout_marginBottom="4dp"/>
 
-    <!-- Add other TextViews for other fields -->
+<TextView
+        android:id="@+id/textItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"/>
+
+<TextView
+        android:id="@+id/textCurrentLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Location"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"/>
+
+<TextView
+        android:id="@+id/textNewLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Location"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"/>
+
+<TextView
+        android:id="@+id/textStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"/>
+
+<TextView
+        android:id="@+id/textUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unit"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"/>
+    </LinearLayout>
+
 
 </RelativeLayout>
