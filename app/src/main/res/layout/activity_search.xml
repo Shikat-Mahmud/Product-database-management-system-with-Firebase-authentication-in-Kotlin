@@ -1,18 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".search">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/btn_color1"
-        app:title="Search"
-        app:navigationIconTint="@color/iconColor"
-        app:titleTextColor="@color/white"/>
+        android:layout_height="wrap_content">
 
-</RelativeLayout>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/btn_color1"
+            app:title="Search"
+            app:navigationIconTint="@color/iconColor"
+            app:titleTextColor="@color/white" />
+
+        <EditText
+            android:id="@+id/searchBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/input_bg"
+            android:hint="Search item"
+            android:padding="12dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black" />
+
+        <!-- Add a search button (Button) -->
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchBox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:text="Search" />
+
+        <!-- Add a TextView for displaying search results -->
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchBtn"
+            android:layout_marginVertical="16dp"
+            android:padding="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:textColor="@android:color/black"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+
+</ScrollView>

@@ -9,16 +9,14 @@ import com.google.firebase.database.ValueEventListener
 
 class FirebaseHelper {
 
-    private val databaseReference: DatabaseReference = FirebaseDatabase.getInstance().reference.child("All Spare Parts")
+    private val databaseReference: DatabaseReference =
+        FirebaseDatabase.getInstance().reference.child("All Spare Parts")
 
     fun fetchItemData(callback: (List<ItemModel>) -> Unit) {
-        databaseReference.addValueEventListener(object : ValueEventListener {
+        databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val itemList = mutableListOf<ItemModel>()
-
-                for (snapshot in dataSnapshot.children) {
-                    val item = snapshot.getValue(ItemModel::class.java)
-                    item?.let { itemList.add(it) }
+                val itemList = dataSnapshot.children.mapNotNull { snapshot ->
+                    snapshot.getValue(ItemModel::class.java)
                 }
                 callback(itemList)
             }

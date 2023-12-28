@@ -2,16 +2,16 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary color. -->
-        <item name="colorPrimaryDark">@color/accentColor</item>
+        <item name="colorPrimaryDark">@color/btn_color1</item>
         <item name="colorPrimary">@color/btn_color1</item>
         <item name="colorPrimaryVariant">#00CDC6</item>
         <item name="colorOnPrimary">#18C8A5</item>
         <item name="colorAccent">@color/accentColor</item>
 
         <!-- Secondary color. -->
-<!--        <item name="colorSecondary">@color/btn_color2</item>-->
-<!--        <item name="colorSecondaryVariant">#00CDC6</item>-->
-<!--        <item name="colorOnSecondary">#18C8A5</item>-->
+        <!--        <item name="colorSecondary">@color/btn_color2</item>-->
+        <!--        <item name="colorSecondaryVariant">#00CDC6</item>-->
+        <!--        <item name="colorOnSecondary">#18C8A5</item>-->
     </style>
 
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
