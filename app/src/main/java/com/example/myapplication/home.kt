@@ -3,8 +3,8 @@ package com.example.myapplication
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -29,13 +29,13 @@ class home : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener
         val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val toggle = ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open_nav,R.string.close_nav)
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container,Dashboard()).commit()
+                .replace(R.id.fragment_container, Dashboard()).commit()
             drawerNavView.setCheckedItem(R.id.nav_home)
 
             openDashboardFragment()
@@ -67,11 +67,11 @@ class home : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             R.id.nav_home -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container,Dashboard()).commit()
+                .replace(R.id.fragment_container, Dashboard()).commit()
             R.id.nav_addItem -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container,AddItem()).commit()
+                .replace(R.id.fragment_container, AddItem()).commit()
             R.id.nav_searchItem -> {
                 val intent = Intent(this, search::class.java)
                 startActivity(intent)
@@ -80,17 +80,33 @@ class home : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener
                 val intent = Intent(this, info::class.java)
                 startActivity(intent)
             }
-            R.id.nav_logout -> Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show()
+            R.id.nav_logout -> showLogoutConfirmationDialog()
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
+    private fun showLogoutConfirmationDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Logout")
+            .setMessage("Are you sure you want to logout?")
+            .setPositiveButton("Logout") { _, _ -> logoutUser() }
+            .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }
+            .show()
+    }
+
+    private fun logoutUser() {
+
+        val intent = Intent(this, login::class.java)
+        startActivity(intent)
+        finish() // Close the current activity
+    }
+
     override fun onBackPressed() {
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
-            onBackPressedDispatcher.onBackPressed()
+            showLogoutConfirmationDialog()
         }
     }
 
