@@ -57,15 +57,19 @@ class search : AppCompatActivity() {
 
     private fun displaySearchResults(results: List<ItemModel>) {
         if (results.isEmpty()) {
-            Log.d("SearchActivity", "No results found")
             resultTextView.text = "Item not found"
         } else {
-            Log.d("SearchActivity", "Results found: ${results.size}")
-            // Display the search results in the canvas or any other view as needed
-            // For now, let's just concatenate the items into a string and set it to resultTextView
-            val resultString = results.joinToString("\n") { item ->
-                "SNo: ${item.sNo}, Item: ${item.item}, Current Location: ${item.currentLocation}, " +
-                        "New Location: ${item.newLocation}, Status: ${item.status}, Unit: ${item.unit}"
+            // Display the search results with spacing between each item
+            val resultString = buildString {
+                results.forEach { item ->
+                    append("SNo: ${item.sNo}\n")
+                    append("Item: ${item.item}\n")
+                    append("Current Location: ${item.currentLocation}\n")
+                    append("New Location: ${item.newLocation}\n")
+                    append("Status: ${item.status}\n")
+                    append("Unit: ${item.unit}\n")
+                    append("\n") // Add a newline for spacing between items
+                }
             }
             resultTextView.text = resultString
         }
