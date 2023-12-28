@@ -8,6 +8,7 @@
     <color name="input_stroke">#5C5C5C</color>
     <color name="darkGray">#494949</color>
     <color name="input_bg">#C1C1C1</color>
+    <color name="input_bg2">#FFFFFF</color>
     <color name="primary_color">#50A7B6</color>
     <color name="iconColor">#FFFFFF</color>
     <color name="accentColor">#00B7BD</color>

@@ -25,7 +25,8 @@
                 android:layout_height="56dp"
                 android:background="@color/btn_color1"
                 app:title="All Spare Parts"
-                app:navigationIconTint="@color/white"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:titleTextColor="@color/white"/>
 
             <FrameLayout
