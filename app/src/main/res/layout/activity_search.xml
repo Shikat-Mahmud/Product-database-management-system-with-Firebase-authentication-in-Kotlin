@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".search">
 
-    <RelativeLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -19,62 +19,89 @@
             app:navigationIconTint="@color/iconColor"
             app:titleTextColor="@color/white" />
 
-        <EditText
-            android:id="@+id/searchBox"
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nestedScrollView"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/toolbar"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/input_bg"
-            android:hint="Search item"
-            android:padding="12dp"
-            android:singleLine="true"
-            android:textColor="@android:color/black" />
+            android:layout_height="wrap_content">
 
-        <!-- Add a search button (Button) -->
-        <Button
-            android:id="@+id/searchBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/searchBox"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:textSize="16sp"
-            android:text="Search" />
+            <EditText
+                android:id="@+id/searchBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg"
+                android:hint="Search item"
+                android:padding="12dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black" />
 
-
-        <LinearLayout
-            android:id="@+id/resultTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/searchBtn"
-            android:layout_marginVertical="16dp"
-            android:textSize="16sp"
-            android:layout_marginHorizontal="16dp"
-            android:textColor="@android:color/black"
-            android:orientation="vertical"
-            android:visibility="visible">
-            <TextView
-                xmlns:android="http://schemas.android.com/apk/res/android"
+            <!-- Add a search button (Button) -->
+            <Button
+                android:id="@+id/searchBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
+                android:layout_below="@id/searchBox"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
                 android:textSize="16sp"
-                android:layout_gravity="center"
-                android:gravity="center"
+                android:text="Search" />
+
+
+            <LinearLayout
+                android:id="@+id/resultTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/searchBtn"
                 android:layout_marginVertical="16dp"
-                android:padding="16dp"
+                android:textSize="16sp"
                 android:layout_marginHorizontal="16dp"
-                />
+                android:textColor="@android:color/black"
+                android:orientation="vertical"
+                android:visibility="visible">
 
-        </LinearLayout>
+                <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginVertical="16dp"
+                    android:padding="16dp"
+                    android:layout_marginHorizontal="16dp" />
 
-    </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabScrollToTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/baseline_arrow_upward_24"
+        app:backgroundTint="@color/btn_color1"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:borderWidth="0dp"
+        app:tint="@android:color/white"
+        android:elevation="0dp"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

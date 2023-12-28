@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import ItemModel
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +11,9 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.NestedScrollView
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class search : AppCompatActivity() {
 
@@ -18,10 +21,20 @@ class search : AppCompatActivity() {
         private lateinit var searchButton: Button
         private lateinit var resultTextView: LinearLayout
         private lateinit var firebaseHelper: FirebaseHelper
+        private lateinit var nestedScrollView: NestedScrollView
+        private lateinit var fabScrollToTop: FloatingActionButton
 
+        @SuppressLint("MissingInflatedId")
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_search)
+
+            nestedScrollView = findViewById(R.id.nestedScrollView)
+            fabScrollToTop = findViewById(R.id.fabScrollToTop)
+
+            fabScrollToTop.setOnClickListener {
+                nestedScrollView.smoothScrollTo(0, 0)
+            }
 
             val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
             setSupportActionBar(toolbar)
