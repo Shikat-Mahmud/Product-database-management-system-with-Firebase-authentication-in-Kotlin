@@ -1,7 +1,6 @@
-###Welcome to my project!
 
-<img src="https://example.com/image.jpg" alt="GitHub Logo" width="500" textalign="center">
-
+<img src="https://drive.google.com/file/d/1_dMqq30DmpHD8xRBTIe1em91XW07ra8X/view?usp=sharing" alt="App Logo" width="500" textalign="center">
+<img src="https://drive.google.com/file/d/1t8SeCrmys36chNCOAuMJPBDV0RnrWCRn/view?usp=sharing" alt="App Logo" width="500" textalign="center">
 
 <b>App Name: Product Database Manager</b>
 
