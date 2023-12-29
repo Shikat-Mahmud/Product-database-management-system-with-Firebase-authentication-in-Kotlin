@@ -115,11 +115,12 @@ class home : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener
                 val intent = Intent(Intent.ACTION_CREATE_DOCUMENT)
                 intent.addCategory(Intent.CATEGORY_OPENABLE)
                 intent.type = "application/pdf"
-                intent.putExtra(Intent.EXTRA_TITLE, "AllSpareParts.pdf")
+                intent.putExtra(Intent.EXTRA_TITLE, "All Spare Parts.pdf")
                 startActivityForResult(intent, CREATE_PDF_REQUEST_CODE)
             } else {
                 Toast.makeText(this, "No data available to export", Toast.LENGTH_SHORT).show()
             }
+
         }
     }
 
@@ -153,8 +154,6 @@ class home : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener
         }
     }
 
-
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CREATE_PDF_REQUEST_CODE && resultCode == RESULT_OK) {
@@ -178,6 +177,8 @@ class home : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener
     }
 
 
+
+    // For share the file
     private fun sharePdfFile() {
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "application/pdf"
