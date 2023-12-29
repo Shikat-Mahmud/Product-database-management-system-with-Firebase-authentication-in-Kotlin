@@ -1,3 +1,6 @@
+###Welcome to my project!
+
+<img src="https://example.com/image.jpg" alt="GitHub Logo" width="500" textalign="center">
 
 
 <b>App Name: Product Database Manager</b>
