@@ -129,19 +129,22 @@ class home : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener
             val pdfDocument = PdfDocument(pdfWriter)
             val document = Document(pdfDocument)
 
-            document.add(Paragraph("Product Data:"))
+            document.add(Paragraph("All Spare Parts:"))
             databaseData?.let { data ->
                 for (item in data) {
                     document.add(
                         Paragraph(
-                            "SNo: ${item.sNo}, Item: ${item.item}, " +
-                                    "Current Location: ${item.currentLocation}, " +
-                                    "New Location: ${item.newLocation}, " +
-                                    "Status: ${item.status}, Unit: ${item.unit}"
+                            "SNo: ${item.sNo}\n" +
+                                    "Item: ${item.item}\n" +
+                                    "Current Location: ${item.currentLocation}\n" +
+                                    "New Location: ${item.newLocation}\n" +
+                                    "Status: ${item.status}\n" +
+                                    "Unit: ${item.unit}\n\n"
                         )
                     )
                 }
             }
+
 
             document.close()
         } catch (e: Exception) {
@@ -149,6 +152,8 @@ class home : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener
             Toast.makeText(this, "Failed to generate PDF", Toast.LENGTH_SHORT).show()
         }
     }
+
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
